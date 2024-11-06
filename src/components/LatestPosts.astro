@@ -1,0 +1,41 @@
+---
+const posts = [
+  {
+    title: "Guía Básica de Automatización del Hogar",
+    excerpt: "Aprende los fundamentos para comenzar con la domótica en tu hogar.",
+    date: "2024-04-15",
+    image: "/home-automation.jpg"
+  },
+  {
+    title: "Los Mejores Dispositivos Smart Home 2024",
+    excerpt: "Análisis de los dispositivos más innovadores para tu hogar inteligente.",
+    date: "2024-04-10",
+    image: "/smart-devices.jpg"
+  },
+  {
+    title: "Ahorro Energético con Domótica",
+    excerpt: "Optimiza el consumo energético de tu hogar con tecnología inteligente.",
+    date: "2024-04-05",
+    image: "/energy-saving.jpg"
+  }
+];
+---
+
+<section id="latest-posts" class="py-16 px-4 bg-gray-900">
+  <div class="max-w-6xl mx-auto">
+    <h2 class="text-3xl font-bold text-center mb-12 text-white">Últimos Artículos</h2>
+    <div class="grid md:grid-cols-3 gap-8">
+      {posts.map(post => (
+        <article class="bg-white/5 rounded-xl overflow-hidden hover:bg-white/10 transition-colors">
+          <div class="h-48 bg-purple-900/50"></div>
+          <div class="p-6">
+            <time class="text-sm text-gray-400">{post.date}</time>
+            <h3 class="text-xl font-semibold mb-2 text-white">{post.title}</h3>
+            <p class="text-gray-400 mb-4">{post.excerpt}</p>
+            <a href="#" class="text-purple-400 hover:text-purple-300">Leer más →</a>
+          </div>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
