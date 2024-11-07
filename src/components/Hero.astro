@@ -1,17 +1,28 @@
 ---
+
 ---
 
-<section class="hero min-h-[80vh] flex items-center justify-center relative overflow-hidden bg-gradient-to-b from-purple-900 to-gray-900">
-  <div class="absolute inset-0 bg-[url('/grid.svg')] bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))]"></div>
+<section
+  class="main-section hero min-h-[100dvh] flex items-center justify-center relative overflow-hidden bg-gradient-to-b from-purple-800 to-gray-900"
+>
+  <div
+    class="absolute inset-0 bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))]"
+  >
+  </div>
   <div class="relative z-10 text-center px-4">
     <h1 class="text-5xl md:text-7xl font-bold mb-6 text-white">
-      El Futuro de los<br/>
+      El Futuro de los<br />
       <span class="text-gradient">Hogares Inteligentes</span>
     </h1>
-    <p class="text-xl md:text-2xl text-gray-300 mb-8 max-w-2xl mx-auto">
-      Explora las últimas tendencias en domótica y descubre cómo transformar tu hogar en un espacio inteligente y eficiente.
+    <p class="text-xl md:text-2xl text-gray-200 mb-8 max-w-2xl mx-auto">
+      Optimización redisencial para la eficiencia energética y la comidad en
+      hogares urbanos de estrato 4 en Bogotá, a través de sistemas domóticos
+      seguros e interoperables
     </p>
-    <a href="#latest-posts" class="bg-white text-purple-900 px-8 py-3 rounded-full font-semibold hover:bg-purple-100 transition-colors">
+    <a
+      href="#intro"
+      class="bg-white text-purple-900 px-8 py-3 rounded-full font-semibold hover:bg-purple-100 transition-colors"
+    >
       Comenzar
     </a>
   </div>
@@ -24,4 +35,26 @@
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
+  .main-section {
+    opacity: 0;
+    transition: opacity .7s ease-in-out;
+  }
+  .fade-in {
+    opacity: 1;
+  }
 </style>
+
+<script is:inline>
+  document.addEventListener("DOMContentLoaded", () => {
+    document.querySelector(".main-section").classList.add("fade-in");
+    if (window.location.hash === "#intro") {
+      history.replaceState(null, null, " ");
+    }
+    document
+      .querySelector('a[href="#intro"]')
+      .addEventListener("click", (event) => {
+        event.preventDefault();
+        document.getElementById("intro").scrollIntoView({ behavior: "smooth" });
+      });
+  });
+</script>

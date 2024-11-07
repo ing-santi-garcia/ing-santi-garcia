@@ -10,9 +10,9 @@ interface Props {
 const { title, description, icon, content, id } = Astro.props;
 ---
 
-<div class="feature-card p-6 rounded-xl bg-white/5 backdrop-blur-lg border border-white/10 hover:border-purple-500/50 transition-all cursor-pointer"
+<div class="feature-card  flex flex-col justify-center items-center p-6 rounded-xl bg-white/15 backdrop-blur-lg border border-white/10 hover:border-purple-500/50 transition-all cursor-pointer"
      data-modal-target={id}>
-  <div class="text-4xl mb-4">{icon}</div>
+  <div class="text-8xl mb-4">{icon}</div>
   <h3 class="text-xl font-semibold mb-2 text-white">{title}</h3>
   <p class="text-gray-400">{description}</p>
 </div>
